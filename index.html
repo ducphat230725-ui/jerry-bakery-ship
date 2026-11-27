@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Jerry Ship</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#3E2216">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Jerry Ship">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="manifest" href="manifest.webmanifest">
+<style>
+  html,body{margin:0;height:100%;background:#3E2216;overflow:hidden}
+  iframe{position:fixed;inset:0;width:100%;height:100%;border:0;background:#F6EBDD;padding-top:env(safe-area-inset-top);box-sizing:border-box}
+  #cho{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:#3E2216;color:#FBF3E8;font:600 15px system-ui,sans-serif;transition:opacity .4s}
+  #cho img{width:120px;height:120px;border-radius:28px;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+  #cho a{display:none;color:#F2C14E;text-decoration:underline}
+</style>
+</head>
+<body>
+<div id="cho"><img src="icon-512.png" alt="Jerry Ship"><div>Đang mở Jerry Ship…</div><a id="moNgoai" target="_blank" rel="noopener">Chậm quá? Bấm để mở trong trình duyệt</a></div>
+<script>
+  /* ====== DÁN LINK APP (đuôi /exec) VÀO GIỮA HAI DẤU NHÁY Ở DÒNG DƯỚI ====== */
+  var LINK_APP = 'DAN_LINK_EXEC_VAO_DAY';
+
+  var f = document.createElement('iframe');
+  f.src = LINK_APP; f.allow = 'camera; clipboard-write'; f.title = 'Jerry Ship';
+  f.onload = function () { var c = document.getElementById('cho'); c.style.opacity = 0; setTimeout(function () { c.style.display = 'none'; }, 400); };
+  document.body.appendChild(f);
+  var a = document.getElementById('moNgoai'); a.href = LINK_APP;
+  setTimeout(function () { a.style.display = 'block'; }, 12000);
+</script>
+</body>
+</html>
